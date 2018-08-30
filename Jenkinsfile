@@ -2,18 +2,18 @@ try{
     node {
     echo 'Build Started'
     stage('Checkout'){
-         git branch: 'master', credentialsId: 'bitbucket', url: 'https://github.com/devopstrainingblr/Ant-WebProject.git'
+         git branch: 'master', credentialsId: 'bitbucket', url: 'https://github.com/naveenkumarreddy-polaka/Ant-WebProject.git'
     }
    
         stage('build'){
-        sh 'ant -f build-mt.xml'
+       bat 'ant -f build-mt.xml'
     }
      stage('Test'){
-      /*  sh 'mvn test' */
+      /*  bat 'mvn test' */
          echo 'test done'
     }
     stage('Package'){
-       /* sh 'mvn package' */
+       /* bat 'mvn package' */
         echo 'Package done'
     }
     stage('Deploy-dev'){
